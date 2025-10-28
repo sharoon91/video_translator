@@ -1,0 +1,10 @@
+Flask==3.0.3
+whisper==1.1.10
+torch==2.3.0
+torchaudio==2.3.0
+moviepy==1.0.3
+pydub==0.25.1
+edge-tts==6.1.10
+googletrans==4.0.0-rc1
+numpy==1.26.4
+numba==0.59.1
