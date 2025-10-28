@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sharoon AI Video Dubbing Tool</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1e293b, #3b82f6);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: #facc15;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 25px;
+      opacity: 0.9;
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 4px 25px rgba(0,0,0,0.2);
+      display: inline-block;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    input[type="file"],
+    select {
+      background: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px 0;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    button {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      border: none;
+      border-radius: 10px;
+      padding: 12px 20px;
+      color: white;
+      font-size: 17px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #16a34a, #15803d);
+      transform: translateY(-2px);
+    }
+
+    .icon {
+      font-size: 60px;
+      margin-bottom: 15px;
+      color: #38bdf8;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    @media (max-width: 600px) {
+      form {
+        width: 90%;
+        padding: 20px;
+      }
+      h1 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <i class="fa-solid fa-microphone-lines icon"></i>
+  <h1>Sharoon AI Video Dubbing Tool</h1>
+  <p>🎥 Upload a video and get AI-generated voice dubbing in your selected language.</p>
+
+  <form action="/translate" method="POST" enctype="multipart/form-data">
+    <input type="file" name="video" accept="video/*" required>
+    
+    <select name="language" required>
+      <option value="">🌍 Select Target Language</option>
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+      <option value="ur">Urdu</option>
+      <option value="ar">Arabic</option>
+      <option value="fr">French</option>
+      <option value="es">Spanish</option>
+      <option value="zh-cn">Chinese (Mandarin)</option>
+    </select>
+
+    <button type="submit"><i class="fa-solid fa-language"></i> Translate Video</button>
+  </form>
+
+  <footer>© 2025 Sharoon AI Labs — Powered by Whisper + Edge TTS</footer>
+</body>
+</html>
